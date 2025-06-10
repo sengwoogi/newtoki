@@ -1,6 +1,6 @@
-# Project Title
+# Newtoki Novel Downloader
 
-A brief description of this project.
+This program, `newtoki.go`, is a command-line tool designed to download novel content from websites structured similarly to Newtoki. It fetches chapters sequentially based on IDs found in the initial novel page and saves the extracted text content to a local file.
 
 ## Getting Started
 
@@ -8,39 +8,41 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+Go (Golang) needs to be installed on your system. You can download it from the official Go download page: [https://golang.org/dl/](https://golang.org/dl/)
 
-### Installing
+### Running the Program
 
-A step-by-step series of examples that tell you how to get a development environment running.
+To run the program directly, use the following command:
 
-## Running the tests
+```bash
+go run newtoki.go
+```
 
-Explain how to run the automated tests for this system.
+## Usage
 
-## Deployment
+1.  The program will first prompt you to "Enter filename:". This will be the base name for the output file (e.g., if you enter "mynovel", the output will be "mynovel.txt").
+2.  Next, it will prompt "Enter headers:".
+3.  You need to paste a full HTTP GET request, including the request line and necessary headers.
+4.  **Crucially, the `Host` header must be present.** Other headers like `User-Agent`, `Cookie`, etc., can be included as needed.
+5.  Here is an example of the header input:
 
-Add additional notes about how to deploy this on a live system.
+    ```
+    GET /novel/12345 HTTP/1.1
+    Host: yourtargetdomain.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+    Cookie: your_cookie_if_needed
+    ```
+6.  The program will then download the novel content and save it to `[filename].txt`, showing progress along the way.
 
 ## Built With
 
-* [Framework/Tool Name](URL) - The framework used
-* [Another Tool](URL) - Another tool used
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+* [Go (Golang)](https://golang.org/) - The programming language used
+* [PuerkitoBio/goquery](https://github.com/PuerkitoBio/goquery) - Go library for HTML parsing
 
 ## Authors
 
-* **Your Name** - *Initial work* - [Your GitHub Profile](https://github.com/yourusername)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+This script was created to download novel content.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is unlicensed.

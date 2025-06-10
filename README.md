@@ -83,7 +83,16 @@ go run newtoki.go
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
     Cookie: your_cookie_if_needed
     ```
-6.  그러면 프로그램이 소설 콘텐츠를 다운로드하고 `[filename].txt`에 저장하며 진행 상황을 보여줍니다.
+    ![image](https://github.com/user-attachments/assets/1100e4b1-194f-4392-bcb1-c8232dbd897d)
+    POST /novel/18494822 HTTP/3
+    Host: booktoki468.com ... 붙여넣기
+
+    ![image](https://github.com/user-attachments/assets/204ef835-72d9-4129-b30a-6d8cec043ac7)
+    :authority
+    booktoki468.com .. 붙여넣기
+
+    
+7.  그러면 프로그램이 소설 콘텐츠를 다운로드하고 `[filename].txt`에 저장하며 진행 상황을 보여줍니다.
 
 ## 만들어진 환경 (Korean)
 
